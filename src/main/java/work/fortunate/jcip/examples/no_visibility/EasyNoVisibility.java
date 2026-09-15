@@ -1,13 +1,15 @@
 package work.fortunate.jcip.examples.no_visibility;
 
 
+import net.jcip.annotations.NotThreadSafe;
 import net.jcip.annotations.ThreadSafe;
 
 /**
  * adapted from JCIP 3.1
- *
+ * if number is set before ready, jcstress tests pass on x86 CPUs
+ * on ARM CPUs non-volatile state variables might cause serious bugs
  */
-@ThreadSafe
+@NotThreadSafe
 public class EasyNoVisibility {
     private boolean ready = false;
     private int number;

@@ -5,9 +5,10 @@ import net.jcip.annotations.ThreadSafe;
 
 
 /**
+ * Adapted from JCIP 2.2
  * Non-atomic compound actions on a shared counter;
  */
-@ThreadSafe
+@NotThreadSafe
 public class RacyCounter {
 
     private int count;

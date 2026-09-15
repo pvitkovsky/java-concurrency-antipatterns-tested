@@ -1,12 +1,13 @@
 package work.fortunate.jcip.examples.possible_reordering;
 
 
+import net.jcip.annotations.NotThreadSafe;
 import net.jcip.annotations.ThreadSafe;
 
 /**
  * Adapted from JCIP listing 16.1
  */
-@ThreadSafe
+@NotThreadSafe
 public class EasyPossibleReordering {
     public record IntPair(int a, int b){};
     private int a = 0, b = 0;

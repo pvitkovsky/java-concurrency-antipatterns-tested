@@ -1,13 +1,14 @@
 package work.fortunate.jcip.examples.faulty_poly_invariant;
 
 import net.jcip.annotations.GuardedBy;
+import net.jcip.annotations.NotThreadSafe;
 import net.jcip.annotations.ThreadSafe;
 
 /**
- * Classic range invariant that must be updated atomically.
- * Volatile is not enough!
+ * Adapted from JCIP 4.10
+ * To protect the invariant, the variables must be updated atomically.
  */
-@ThreadSafe
+@NotThreadSafe
 public class FaultyPolyInvariant {
 
     /** Invariant: lower <= upper */
