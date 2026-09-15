@@ -1,9 +1,12 @@
 package work.fortunate.jcip.examples.possible_reordering;
 
 
+import net.jcip.annotations.ThreadSafe;
+
 /**
- * Blatant example of unsafe concurrent code, based on JCIP listing 16.1
+ * Adapted from JCIP listing 16.1
  */
+@ThreadSafe
 public class EasyPossibleReordering {
     public record IntPair(int a, int b){};
     private int a = 0, b = 0;

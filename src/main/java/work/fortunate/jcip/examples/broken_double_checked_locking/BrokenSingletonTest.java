@@ -13,7 +13,7 @@ import org.openjdk.jcstress.infra.results.I_Result;
 @JCStressTest
 @Outcome(id = "0", expect = Expect.ACCEPTABLE, desc = "Not initialized yet.")
 @Outcome(id = "1", expect = Expect.ACCEPTABLE, desc = "Fully initialized.")
-@Outcome(id = "-1", expect = Expect.ACCEPTABLE_INTERESTING, desc = "💥 Partially initialized object observed!")
+@Outcome(id = "-1", expect = Expect.FORBIDDEN, desc = "💥 Partially initialized object observed!")
 @State
 public class BrokenSingletonTest {
     @Actor
@@ -21,7 +21,7 @@ public class BrokenSingletonTest {
         try {
             BrokenSingleton.getInstance();
         } catch (InterruptedException ex){
-
+            System.out.println(ex.getMessage());
         }
 
     }
@@ -36,7 +36,7 @@ public class BrokenSingletonTest {
                 r.r1 = -1;
             }
         } catch (InterruptedException ex){
-
+            System.out.println(ex.getMessage());
         }
 
     }

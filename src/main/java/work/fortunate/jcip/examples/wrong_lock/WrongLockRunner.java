@@ -8,6 +8,6 @@ public class WrongLockRunner {
         wl.increment();
     }
     public synchronized int get(WrongLock wl )  {
-        return wl.total;
+        return wl.getTotal();
     }
 }

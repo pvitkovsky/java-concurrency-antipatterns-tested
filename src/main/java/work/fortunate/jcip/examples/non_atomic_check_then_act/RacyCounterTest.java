@@ -10,7 +10,7 @@ import org.openjdk.jcstress.infra.results.I_Result;
  */
 @JCStressTest
 @Outcome(id = "2", expect = Expect.ACCEPTABLE, desc = "Both updates succeeded.")
-@Outcome(id = "1", expect = Expect.ACCEPTABLE_INTERESTING, desc = "💥 Race Condition! Lost update captured.")
+@Outcome(id = "1", expect = Expect.FORBIDDEN, desc = "💥 Race Condition! Lost update captured.")
 @State
 public class RacyCounterTest {
 

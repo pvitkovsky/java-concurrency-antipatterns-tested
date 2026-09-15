@@ -3,10 +3,9 @@ package work.fortunate.jcip.examples.no_visibility;
 import org.openjdk.jcstress.annotations.*;
 import org.openjdk.jcstress.infra.results.I_Result;
 
-// TODO: spotbugs ignores this;
 @JCStressTest
 @Outcome(id = "1", expect = Expect.ACCEPTABLE, desc = "Successful.")
-@Outcome(id = "-1", expect = Expect.ACCEPTABLE_INTERESTING, desc = "💥 Race Condition! Wrong number.")
+@Outcome(id = "-1", expect = Expect.FORBIDDEN, desc = "💥 Race Condition! Wrong number.")
 @State
 public class EasyNoVisibilityTest {
 

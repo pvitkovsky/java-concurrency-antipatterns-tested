@@ -6,7 +6,7 @@ import org.openjdk.jcstress.infra.results.I_Result;
 
 @JCStressTest
 @Outcome(id = "2", expect = Expect.ACCEPTABLE, desc = "Invariant held.")
-@Outcome(id = "1", expect = Expect.ACCEPTABLE_INTERESTING, desc = "💥 Race Condition! Lost update.")
+@Outcome(id = "1", expect = Expect.FORBIDDEN, desc = "💥 Race Condition! Lost update.")
 @Outcome(id = "0", expect = Expect.FORBIDDEN, desc = "💥 Race Condition! Two lost updates, how did you get here?.")
 @State
 public class WrongLockTest {
@@ -27,6 +27,6 @@ public class WrongLockTest {
 
     @Arbiter
     public void checkResults(I_Result r){
-        r.r1 = wl.total;
+        r.r1 = wl.getTotal();
     }
 }

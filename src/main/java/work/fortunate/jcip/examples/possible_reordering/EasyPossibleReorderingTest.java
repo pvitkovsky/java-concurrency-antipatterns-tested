@@ -9,8 +9,8 @@ import org.openjdk.jcstress.infra.results.I_Result;
  */
 @JCStressTest
 @Outcome(id = "1", expect = Expect.ACCEPTABLE, desc = "Both updates succeeded.")
-@Outcome(id = "-1", expect = Expect.ACCEPTABLE_INTERESTING, desc = "💥 Race Condition! Ordinary thread interleaving")
-@Outcome(id = "-2", expect = Expect.ACCEPTABLE_INTERESTING, desc = "💥 Race Condition! Store-Load Reordering caused a return of stale values.")
+@Outcome(id = "-1", expect = Expect.FORBIDDEN, desc = "💥 Race Condition! Thread interleaving")
+@Outcome(id = "-2", expect = Expect.FORBIDDEN, desc = "💥 Race Condition! Store-Load reordering caused a return of stale values.")
 @State
 public class EasyPossibleReorderingTest {
 

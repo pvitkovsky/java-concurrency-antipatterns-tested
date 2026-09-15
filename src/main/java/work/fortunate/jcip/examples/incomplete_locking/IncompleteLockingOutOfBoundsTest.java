@@ -38,7 +38,7 @@ public class IncompleteLockingOutOfBoundsTest {
 }
 
 
-/**
+/*
  *
  *
  * In Java 9+, String(AbstractStringBuilder asb, Void sig) handles it completely differently. Look closely at how the variables are extracted and used in the code you pasted:

@@ -5,9 +5,8 @@ import net.jcip.annotations.ThreadSafe;
 
 /**
  * Incomplete locking
- * spotbugs ignores this;
  */
-@ThreadSafe // For spotbugs
+@ThreadSafe
 public class IncompleteLocking {
 
     private final Object lock = new Object();

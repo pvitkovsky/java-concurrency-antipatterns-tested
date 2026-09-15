@@ -16,7 +16,9 @@ public class FaultyPolyInvariantTest {
         try{
             polyInvariant.setLowerBound(10);
             polyInvariant.setUpperBound(20);
-        } catch (Throwable t) {}
+        } catch (Throwable t) {
+            System.out.println(t.getMessage());
+        }
     }
 
     @Actor
@@ -24,7 +26,9 @@ public class FaultyPolyInvariantTest {
         try {
             polyInvariant.setLowerBound(1);
             polyInvariant.setUpperBound(2);
-        } catch (Throwable t) {}
+        } catch (Throwable t) {
+            System.out.println(t.getMessage());
+        }
     }
 
     @Arbiter

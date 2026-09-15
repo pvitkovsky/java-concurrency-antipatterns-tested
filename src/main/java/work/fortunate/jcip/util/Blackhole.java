@@ -6,5 +6,6 @@ public class Blackhole {
         for (int i = 0; i < tokens; i++) {
             volatileData += i;
         }
+        System.out.println("Consumed loops count: " + volatileData);
     }
 }

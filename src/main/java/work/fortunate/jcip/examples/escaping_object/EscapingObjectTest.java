@@ -8,7 +8,7 @@ import java.util.UUID;
 @JCStressTest
 @Outcome(id = "1", expect = Expect.ACCEPTABLE, desc = "Object fully initialised")
 @Outcome(id = "0", expect = Expect.ACCEPTABLE, desc = "Object is null")
-@Outcome(id = "-1", expect = Expect.ACCEPTABLE_INTERESTING, desc = "💥 Caught leaked reference! Read uninitialized final field.")
+@Outcome(id = "-1", expect = Expect.FORBIDDEN, desc = "💥 Caught leaked reference! Read uninitialized final field.")
 @State
 public class EscapingObjectTest {
 
