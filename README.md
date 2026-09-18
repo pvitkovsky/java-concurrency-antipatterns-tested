@@ -11,5 +11,7 @@ Maven 3+
 ```bash
 mvn clean install                      # also shows ErrorProne output
 mvn spotbugs:check                     # Spotbugs summary (open results/index.html)
-java -jar target/jcstress.jar  -f 1 -v # jcstress test
+java -jar target/jcstress.jar  -f 1 -v # jcstress test 
+                                       # add -t <TestName> to the above to run tests 
+                                       # over all class names containing TestName
 ```

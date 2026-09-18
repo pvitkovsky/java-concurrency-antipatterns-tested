@@ -1,12 +1,13 @@
 package work.fortunate.jcip.examples.wrong_lock;
 
+import net.jcip.annotations.NotThreadSafe;
 import net.jcip.annotations.ThreadSafe;
 
 /**
  * Non-JCIP example inspired by Oracle Java SE exam
  * Pattern when the state seems locked, but on the wrong class!
  */
-@ThreadSafe
+@NotThreadSafe
 public class WrongLock {
 
     private int total;

@@ -6,15 +6,12 @@ import net.jcip.annotations.ThreadSafe;
 
 /**
  * Adapted from JCIP 4.10
- * To protect the invariant, the variables must be updated atomically.
+ * To protect the invariant (lower <= upper), the variables must be updated atomically.
  */
 @NotThreadSafe
 public class FaultyPolyInvariant {
 
-    /** Invariant: lower <= upper */
-    @GuardedBy("this")
     private volatile int lower = 0;
-    @GuardedBy("this")
     private volatile int upper = 10;
 
     public void setLowerBound(int newLower) {

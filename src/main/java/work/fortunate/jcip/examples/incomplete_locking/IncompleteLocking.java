@@ -3,6 +3,7 @@ package work.fortunate.jcip.examples.incomplete_locking;
 import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.NotThreadSafe;
 import net.jcip.annotations.ThreadSafe;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Non-JCIP example.
@@ -14,10 +15,9 @@ public class IncompleteLocking {
 
     private final Object lock = new Object();
 
-    @GuardedBy("lock")
     private StringBuilder ledger = new StringBuilder("0");
 
-    public void record(String entry) {
+    public void record(@Nullable String entry) {
         synchronized (lock) {
             ledger.append('|').append(entry);
         }
